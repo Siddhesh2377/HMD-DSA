@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.21"
+    application  // Missing in your version
 }
 
 group = "com.dark.nurov.cli"
@@ -9,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+application {
+    mainClass.set("MainKt")
+}
+
 dependencies {
     testImplementation(kotlin("test"))
 }
@@ -16,6 +21,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(21)
 }
